@@ -20,13 +20,13 @@ const Navbar = () => {
       </Link>
       <ul className={style.list}>
         <li className={style.listItem}>
-          <Link href="/products/design">SERVICES</Link>
+          <Link href="#">SERVICES</Link>
         </li>
         <li className={style.listItem}>
-          <Link href="/products/development">A PROPOS</Link>
+          <Link href="#">A PROPOS</Link>
         </li>
         <li className={style.listItem}>
-          <Link href="/products/production">CONTACT</Link>
+          <Link href="#">CONTACT</Link>
         </li>
       </ul>
       <div className={style.hamburger} onClick={() => setOpen(!open)}>
