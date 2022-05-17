@@ -152,11 +152,7 @@ export const datapays = [{
                 image: "/vacance.jpg",
                 name: "Vancances",
             },
-            {
-                id: 4,
-                image: "tachemenager.jpg",
-                name: "Taches Menageres",
-            },
+
             {
                 id: 5,
                 image: "autres.jpg",
@@ -186,11 +182,7 @@ export const datapays = [{
                 image: "/vacance.jpg",
                 name: "Vancances",
             },
-            {
-                id: 4,
-                image: "tachemenager.jpg",
-                name: "Taches Menageres",
-            },
+
             {
                 id: 5,
                 image: "autres.jpg",
@@ -219,11 +211,7 @@ export const datapays = [{
                 image: "/vacance.jpg",
                 name: "Vancances",
             },
-            {
-                id: 4,
-                image: "tachemenager.jpg",
-                name: "Taches Menageres",
-            },
+
             {
                 id: 5,
                 image: "autres.jpg",
@@ -251,11 +239,6 @@ export const datapays = [{
                 id: 3,
                 image: "/vacance.jpg",
                 name: "Vancances",
-            },
-            {
-                id: 4,
-                image: "tachemenager.jpg",
-                name: "Taches Menageres",
             },
             {
                 id: 5,
@@ -287,11 +270,6 @@ export const datapays = [{
                 name: "Vancances",
             },
             {
-                id: 4,
-                image: "tachemenager.jpg",
-                name: "Taches Menageres",
-            },
-            {
                 id: 5,
                 image: "autres.jpg",
                 name: "Autres",
@@ -318,11 +296,6 @@ export const datapays = [{
                 id: 3,
                 image: "/vacance.jpg",
                 name: "Vancances",
-            },
-            {
-                id: 4,
-                image: "tachemenager.jpg",
-                name: "Taches Menageres",
             },
             {
                 id: 5,
