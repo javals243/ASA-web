@@ -43,13 +43,13 @@ const Navbar = () => {
           <Link href="/">ACCEUIL</Link>
         </li>
         <li className={style.menuItem}>
-          <Link href="/products/design">SERVICES</Link>
+          <Link href="#">SERVICES</Link>
         </li>
         <li className={style.menuItem}>
-          <Link href="/products/development">A PROPOS</Link>
+          <Link href="#">A PROPOS</Link>
         </li>
         <li className={style.menuItem}>
-          <Link href="/contact">CONTACT</Link>
+          <Link href="#">CONTACT</Link>
         </li>
       </ul>
     </div>
