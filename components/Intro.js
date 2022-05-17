@@ -8,7 +8,7 @@ const Intro = ({pays}) => {
        
       <div className={style.info}>
         <h1 className={style.title}>Pays ou nous pouvons vous aider</h1>
-        <h1 className={style.subtitle}>Choisir le pays </h1>
+        <h1 className={style.subtitle}>Choisissez votre destination</h1>
         <div className={style.services}>
           {pays?.map((pays) => (
             <Link key={pays.id} href={`/pays/${pays.name}`} passHref>
