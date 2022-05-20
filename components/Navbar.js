@@ -9,13 +9,13 @@ const Navbar = () => {
   return (
     <div className={style.container}>
       <Link href="/">
-        <Image
-          src={process.env.NEXT_PUBLIC_URL + "/img/logo2.png"}
+        <Image className={style.logo}
+          src={process.env.NEXT_PUBLIC_URL + "/img/logo1.png"}
           
           objectFit="cover"
           alt=""
-          width='500px'
-          height='500px'
+          width='300px'
+          height='100px'
         ></Image>
       </Link>
       <ul className={style.list}>

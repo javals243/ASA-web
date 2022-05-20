@@ -1,12 +1,12 @@
 .container {
     height: 100px;
-    background-color: #03224c;
-    color: white;
+    background-color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 18px;
-    padding: 0px 100px;
+    padding: 0px 50px;
     position: relative;
     overflow: hidden;
 }
@@ -15,8 +15,8 @@
     display: inline;
     margin-right: 30px;
     font-size: 14px;
-    /* font-weight: 300; */
-    color: lightgray;
+    font-weight: 500;
+    color: white;
     cursor: pointer;
 }
 
@@ -25,6 +25,10 @@
     width: 25px;
     height: 20px;
     cursor: pointer;
+}
+
+.logo {
+    color: white;
 }
 
 .line {
@@ -38,7 +42,7 @@
     position: fixed;
     width: 50vw;
     height: calc(100vh - 100px);
-    background-color:inherit;
+    background-color: inherit;
     top: 50px;
     /* right: 0px; */
     z-index: 9999;

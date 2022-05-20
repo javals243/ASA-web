@@ -28,7 +28,7 @@ const Contact = ({pays}) => {
         <input className={style.inputS} type="text" placeholder="Phone" />
         <input className={style.inputL} type="text" placeholder="Email" />
          <input className={style.inputL} type="text" placeholder="Email" />
-          <input className={style.inputL} type="checkbox" placeholder="Email" />
+          <input className={style.inputS} type="checkbox" placeholder="Email" />
         <input className={style.inputL} type="text" placeholder="Subject" />
         <textarea
           className={style.textArea}

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Intro from "../components/Intro";
 import Services from "../components/Services";
 import { data,datapays } from "../data";
-import Testimonials from "../components/Testimonials";
+
 
 export default function Home({ services,pays }) {
   return (
@@ -12,7 +12,7 @@ export default function Home({ services,pays }) {
         <title>Assistance service et acceuil</title>
         <meta
           name="description"
-          content="Web Design, App Development, Content Creation Agency Near Sweden"
+          content="Assistance service et acceuil"
         />
       </Head>
       <Intro pays={pays} />
