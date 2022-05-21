@@ -9,15 +9,21 @@
     padding: 0px 50px;
     position: relative;
     overflow: hidden;
+    border-bottom: 3px solid gray;
 }
 
 .listItem {
     display: inline;
+    height: 100%;
     margin-right: 30px;
     font-size: 14px;
     font-weight: 500;
-    color: white;
+    color: black;
     cursor: pointer;
+}
+
+.listItem:hover {
+    background-color: red;
 }
 
 .hamburger {
@@ -27,14 +33,10 @@
     cursor: pointer;
 }
 
-.logo {
-    color: white;
-}
-
 .line {
     width: 100%;
     height: 3px;
-    background-color: white;
+    background-color: black;
 }
 
 .menu {
@@ -42,14 +44,14 @@
     position: fixed;
     width: 50vw;
     height: calc(100vh - 100px);
-    background-color: inherit;
+    background-color: #151515;
     top: 50px;
     /* right: 0px; */
     z-index: 9999;
     margin: 0;
     padding: 0;
     font-weight: bold;
-    color: lightgray;
+    color: rgb(255, 254, 255);
     list-style: none;
     transition: all 1s ease;
 }
