@@ -24,13 +24,13 @@ const Navbar = () => {
      <div>
         <ul className={style.list}>
         <li className={style.listItem}>
-          <Link href="#">SERVICES</Link>
+          <Link href="/services">SERVICES</Link>
         </li>
         <li className={style.listItem}>
-          <Link href="#">A PROPOS</Link>
+          <Link href="/about">A PROPOS</Link>
         </li>
         <li className={style.listItem}>
-          <Link href="#">CONTACT</Link>
+          <Link href="/contact">CONTACT</Link>
         </li>
       </ul>
       <div className={style.hamburger} onClick={() => setOpen(!open)}>
@@ -47,13 +47,13 @@ const Navbar = () => {
           <Link href="/">ACCEUIL</Link>
         </li>
         <li className={style.menuItem}>
-          <Link href="#">SERVICES</Link>
+          <Link href="/services">SERVICES</Link>
         </li>
         <li className={style.menuItem}>
-          <Link href="#">A PROPOS</Link>
+          <Link href="/about">A PROPOS</Link>
         </li>
         <li className={style.menuItem}>
-          <Link href="#">CONTACT</Link>
+          <Link href="/contact">CONTACT</Link>
         </li>
       </ul>
      </div>

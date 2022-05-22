@@ -16,7 +16,7 @@ const Pays = ({ pays }) => {
       </Head>
       <div className={style.cardL}>
         {pays.sites.map((site) => (
-        <Link key={pays.id} href={`/contact/${pays.name}`} passHref>
+        <Link key={pays.id} href={`/contact`} passHref>
           <div key={site.id} className={style.imgContainer}>
             <Image src={`${process.env.NEXT_PUBLIC_URL}/img/${site.image}`} layout="fill" objectFit="cover" alt="" />
           </div>
