@@ -307,6 +307,31 @@ export const datapays = [{
     },
 ];
 
+export const dataTeams = [{
+        id: 1,
+        name: "Mugisho safari Roland ",
+        grade: "Ongeza ASA’s DG in Ouganda",
+        photo: "/mugisho.jpeg",
+    },
+    {
+        id: 2,
+        name: "Will MATA",
+        grade: "ASA’s DG in Democratic Republic of Congo,",
+        photo: "/will.jpeg",
+    },
+    {
+        id: 3,
+        name: "Sam MANIRAKIZA",
+        grade: "Live in Kigali-Rwanda Expert in ICT & Graphic Design",
+        photo: "/sam.jpeg",
+    },
+    {
+        id: 3,
+        name: "Nking bwenge",
+        grade: "PDG ASA <br/> DG au kenya ",
+        photo: "/nking.jpeg",
+    },
+];
 export const users = [{
         id: 1,
         logo: "yahoo.png",

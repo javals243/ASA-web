@@ -9,7 +9,6 @@
     padding: 0px 50px;
     position: relative;
     overflow: hidden;
-    border-bottom: 3px solid gray;
 }
 
 .listItem {
@@ -22,9 +21,23 @@
     cursor: pointer;
 }
 
-.listItem:hover {
-    background-color: red;
+.logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+.menu1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.listItem:hover {}
 
 .hamburger {
     display: none;
@@ -74,5 +87,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+    }
+    .logo {
+        flex: 0.8;
+    }
+    .menu1 {
+        flex: 0.2;
     }
 }

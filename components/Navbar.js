@@ -8,8 +8,8 @@ const Navbar = () => {
 
   return (
     <div className={style.container}>
-     <div>
-      <Link href="/">
+     <div className={style.logo}>
+      <Link href="/" passHref>
         <Image className={style.logo}
           src={process.env.NEXT_PUBLIC_URL + "/img/logo1.png"}
           
@@ -19,9 +19,8 @@ const Navbar = () => {
           height='100px'
         ></Image>
       </Link>
-
-     </div>
-     <div>
+      </div>
+     <div className={style.menu1}>
         <ul className={style.list}>
         <li className={style.listItem}>
           <Link href="/services">SERVICES</Link>
@@ -57,7 +56,6 @@ const Navbar = () => {
         </li>
       </ul>
      </div>
-     
     </div>
   );
 };

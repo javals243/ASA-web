@@ -5,12 +5,29 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    height: calc(100vh - 100px);
+    height: auto;
 }
 
 .form {
     padding: 30px;
     border-radius: 10px;
+    width: 600px;
+}
+
+.mainLabel {
+    width: 600px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.label,
+.inputD {
+    width: 15px;
+    height: 15px;
 }
 
 .span {

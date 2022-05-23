@@ -1,12 +1,17 @@
-import  React, {useRef,useState} from 'react'
+import  React, {useRef,useState,useEffect} from 'react'
+import axios from 'axios'
 import ReCAPTCHA from "react-google-recaptcha";
 import style from "../styles/Other.module.css"
 
 const Contact = () => {
+  
    const formId = "CWRbvIso";
-  const formSparkUrl = `https://submit-form.com/${formId}`;
+  const formSparkUrl = `${process.env.NEXT_PUBLIC_URLl}/api/email`;
   const recaptchaKey = '6LdQdAwgAAAAADYwUNsX1OBKYNT5gjf11IaSbSBu';
   const recaptchaRef = useRef();
+
+
+   
  
   const initialFormState = {
     email: "",
@@ -21,11 +26,13 @@ const Contact = () => {
    const [checkedItems, setCheckedItems] = useState({});
 
   const handleChange = (event) => {
+  
     setCheckedItems({
       ...checkedItems,
       [event.target.name]: event.target.checked
     });
     setFormState(initialFormState.message = checkedItems)
+  
   };
   const veggies = [" Escorte de l’aéroport ou gare au domicile "," Inscription centre d’anglais et universitaire ", "Réservation du domicile ", "Equipement du domicile ","Familiarisation à la ville "];
 
@@ -35,11 +42,11 @@ const Contact = () => {
     await postSubmission();
     setSubmitting(false);
   };
+  //  "g-recaptcha-response": recaptchaToken,
 
   const postSubmission = async () => {
     const payload = {
       ...formState,
-      "g-recaptcha-response": recaptchaToken,
     };
 
     try {
@@ -53,10 +60,7 @@ const Contact = () => {
       recaptchaRef.current.reset();
     } catch (error) {
       console.log(error);
-      setMessage({
-        class: "bg-red-500",
-        text: "Sorry, there was a problem. Please try again or contact support.",
-      });
+     
     }
   };
 
@@ -75,18 +79,10 @@ const Contact = () => {
   return (
     <div className={style.container}>
       <div>
-        <h1 className={style.title}>
-Contact us
-        </h1>
-        {message && (
-          <div className={`my-4 text-white w-full p-4 ${message.class}`}>
-            {message.text}
-          </div>
-        )}
+        <h1 className={style.title}>Contact us</h1>
         <form onSubmit={submitForm} className={style.form}>
-         
           <div className={style.formGroup}>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Nom</label>
             <input
               onChange={updateFormControl}
               className={style.input}
@@ -94,10 +90,20 @@ Contact us
               id="name"
               value={formState?.name}
             />
-            </div>
-         
+          </div>
+
           <div className={style.formGroup}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Phone number</label>
+            <input
+              onChange={updateFormControl}
+              className={style.input}
+              type="tel"
+              id="tel"
+              value={formState?.email}
+            />
+          </div>
+           <div className={style.formGroup}>
+            <label htmlFor="email">employee</label>
             <input
               onChange={updateFormControl}
               className={style.input}
@@ -106,9 +112,27 @@ Contact us
               value={formState?.email}
             />
           </div>
-          <div></div>
-         <div className={style.formGroup}>
-            <label htmlFor="message">Message</label>
+
+            <h3>Avez vous besoin de quel service ?</h3>
+            <div className={style.mainLabel}>
+            {veggies.map((item) => (
+              <div key={item}>
+              <input
+                  type="checkbox"
+                  className={style.inputD}
+                  name={item}
+                  checked={checkedItems[item]}
+                  onChange={handleChange}
+                />
+                   <label  className={style.label}>
+                {item}
+              </label>
+              </div>
+            
+            ))}
+          </div>
+          <div className={style.formGroup}>
+            <label htmlFor="message">Description</label>
             <textarea
               onChange={updateFormControl}
               className={style.input}
@@ -117,6 +141,11 @@ Contact us
               value={formState?.message}
             ></textarea>
           </div>
+           {/* <p>
+          Selectionner un services:{" "}
+          {Object.entries(checkedItems).filter(([key, value]) => value)}{" "}
+        </p>{" "}
+        <br /> */}
 
           <ReCAPTCHA
             ref={recaptchaRef}
@@ -125,10 +154,7 @@ Contact us
             onChange={updateRecaptchaToken}
           />
 
-          <button
-            disabled={submitting}
-            className={style.button1}
-          >
+          <button disabled={submitting} className={style.button1}>
             {submitting ? "Envoyer..." : "Envoyer le message"}
           </button>
         </form>
