@@ -1,12 +1,9 @@
 .container {
     display: flex;
-    background-color: blue;
+    background-color: #242424;
     opacity: 0.9;
     color: white;
     position: relative;
-    @media only screen and (max-width: 380px) {
-        display: block;
-    }
 }
 
 .left {
@@ -14,9 +11,6 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    @media only screen and (max-width: 380px) {
-        padding: 15px;
-    }
 }
 
 .desc {
@@ -45,14 +39,11 @@
 .center {
     flex: 1;
     padding: 20px;
-    @media only screen and (max-width: 380px) {
-        padding: 15px;
-    }
 }
 
 .title {
     margin-bottom: 30px;
-    color: #000;
+    color: #F8C13C;
 }
 
 .list {
@@ -71,16 +62,34 @@
 .right {
     flex: 1;
     padding: 20px;
-    @media only screen and (max-width: 380px) {
-        padding: 15px;
-    }
 }
 
 .contactItem {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    @media only screen and (max-width: 380px) {
+}
+
+@media screen and (max-width: 480px) {
+    .contactItem {
         margin-bottom: 15px;
     }
+    .right {
+        padding: 15px;
+    }
+    .center {
+        padding: 15px;
+    }
+    .container {
+        display: block;
+    }
+}
+
+.left {
+    padding: 15px;
+}
+
+.socialIcon {
+    width: 30px;
+    height: 30px;
 }

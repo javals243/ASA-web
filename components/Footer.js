@@ -20,44 +20,57 @@ const Footer = () => {
           believable.{" "}
         </p>{" "}
         <div className={style.socialContainer}>
-          <div className={style.socialIcon} color="3B5999">
+          <div
+            className={style.socialIcon}
+            style={{ backgroundColor: "#3B5999" }}
+            color="3B5999"
+          >
             <Facebook />
           </div>{" "}
-          <div className={style.socialIcon}  color="E4405F">
+          <div
+            className={style.socialIcon}
+            style={{ backgroundColor: "#E4405F" }}
+            color=""
+          >
             <Instagram />
           </div>{" "}
-          <div className={style.socialIcon} color="55ACEE">
+          <div className={style.socialIcon} style={{ backgroundColor: "#55ACEE" }} color="55ACEE">
             <Twitter />
           </div>{" "}
-          <div className={style.socialIcon}  color="E60023">
+          <div className={style.socialIcon}  style={{ backgroundColor: "#E60023" }} color="E60023">
             <Pinterest />
           </div>{" "}
         </div>{" "}
       </div>{" "}
       <div className={style.center}>
-        <h3 className={style.title}> Useful Links </h3>{" "}
-        <ul className={style.ListItem}>
-          <li className={style.listItem}> Home </li> <li className={style.listItem}> Cart </li>{" "}
-          <li className={style.listItem}> Man Fashion </li>{" "}
-          <li className={style.listItem}> Woman Fashion </li>{" "}
-          <li className={style.listItem}> Accessories </li> <li className={style.listItem}> My Account </li>{" "}
-          <li className={style.listItem}> Order Tracking </li> <li> Wishlist </li>{" "}
-          <li className={style.listItem}> Wishlist </li> <li className={style.listItem}> Terms </li>{" "}
+        <h3 className={style.title}> SERVICES </h3>{" "}
+        <ul className={style.list}>
+          <li className={style.listItem}> Escorte de l’aéroport ou gare au domicile 
+ </li>
+           <li className={style.listItem}>  Inscription centre d’anglais et universitaire </li>
+            <li className={style.listItem}> Réservation du domicile 
+ </li>
+             <li className={style.listItem}> Familiarisation à la ville  </li>
+              <li className={style.listItem}> Equipement du domicile
+</li>
         </ul>
-      <div className={style.right}>
-        <h3 className={style.title}> Contact </h3>{" "}
-        <div className={style.contactItem}>
-          <Room style={{ marginRight: "10px" }} />
-          Av de goma nord-kivu , ville de goma
-        </div>{" "}
-        <div className={style.contactItem}>
-          <Phone style={{ marginRight: "10px" }} /> +243 99 58 68 621
-        </div>{" "}
-        <div className={style.contactItem}></div>
-          <MailOutline style={{ marginRight: "10px" }} /> contact@exemple.dev{" "}
+        </div>
+        <div className={style.right}>
+          <h3 className={style.title}> Contact </h3>{" "}
+          <div className={style.contactItem}>
+            <Room style={{ marginRight: "5px" }} />
+            Av de goma nord-kivu , ville de goma
+          </div>{" "}
+          <div className={style.contactItem}>
+            <Phone style={{ marginRight: "5px" }} /> +243 977 047 777<br/>+254 768 386 511
+
+          </div>{" "}
+          <div className={style.contactItem}></div>
+          <MailOutline
+            style={{ marginRight: "5px" }}
+          /> contact@assistancesejouracceuil.com{" "}
         </div>
       </div>
-    </div>
   );
 };
 

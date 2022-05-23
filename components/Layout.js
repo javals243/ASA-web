@@ -1,4 +1,5 @@
 import styles from "../styles/Layout.module.css";
+import Copyright from "./Copyright";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
@@ -9,6 +10,7 @@ const Layout = ({ children }) => {
         <Navbar />
         {children}
         <Footer/>
+        <Copyright/>
       </>
     </div>
   );
