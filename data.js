@@ -160,7 +160,7 @@ export const datapays = [{
             },
         ],
 
-        longDesc: "ASA est une  association qui a pour mission de venir en aide à tous ceux qui sont nouveaux,perdus, sans repère en RDC en premier lieu et en second lieu dans d'autres villes de la zone EAC ASA offre aux visiteurs et étrangers une chance de se sentir chez eux,dans leurs zones de confort par une assistance pour trouver un taxi,un logement,une université, un hôpital, un hôtel,un commerce, ... ASA a pour vision de rendre la RDC,le Kenya,l'Ouganda, le,le Burundi et le Rwanda votre second chez vous ",
+        longDesc: "ASA est une entreprise qui a pour mission de venir en aide à tous ceux qui sont nouveaux, perdus et sans repère en RDC en  premier lieu et en second lieu dans d’autres villes de la zone de EAC. ASA offre aux visiteurs et étrangers une chance de se sentir chez eux dans leurs zones de confort par une assistance pour trouver un logement, une université, un hôpital, un hôtel, un commerce et bien même un taxi,ect .   ASA a pour but de rendre La RDC, le Kenya, l’Ouganda, le Burundi et le Rwanda un second chez vous. ",
     },
     {
         id: 2,
@@ -189,7 +189,7 @@ export const datapays = [{
                 name: "Autres",
             },
         ],
-        longDesc: "ASA is an association whose mission is to help all those who are new, lost, unmarked in the DRC in the first place and secondly in other cities of the EAC zone.ASA offers visitors and foreigners a chance to feel at home, in their comfort zones through assistance in finding a taxi, accommodation, university, hospital, hotel, business, etc.ASA's vision is to make the DRC, Kenya, Uganda, Burundi and Rwanda your second home. ",
+        longDesc: "ASA is an association whose mission is to help all those who are new, lost, unmarked in the Kenya  the first place and secondly in other cities of the EAC zone.       ASA offers visitors and foreigners a chance to feel at home, in their comfort zones through assistance in finding a taxi, accommodation, university, hospital, hotel, business, etc. ASA's vision is to make the DRC, Kenya, Uganda, Burundi and Rwanda your second home. ",
     },
     {
         id: 3,
@@ -218,7 +218,7 @@ export const datapays = [{
                 name: "Autres",
             },
         ],
-        longDesc: "ASA est une  association qui a pour mission de venir en aide à tous ceux qui sont nouveaux,perdus, sans repère en RDC en premier lieu et en second lieu dans d'autres villes de la zone EAC ASA offre aux visiteurs et étrangers une chance de se sentir chez eux,dans leurs zones de confort par une assistance pour trouver un taxi,un logement,une université, un hôpital, un hôtel,un commerce, ... ASA a pour vision de rendre la RDC,le Kenya,l'Ouganda, le,le Burundi et le Rwanda votre second chez vous ",
+        longDesc: "ASA est une entreprise qui a pour mission de venir en aide à tous ceux qui sont nouveaux, perdus et sans repère au Burundi en  premier lieu et en second lieu dans d’autres villes de la zone de EAC. ASA offre aux visiteurs et étrangers une chance de se sentir chez eux dans leurs zones de confort par une assistance pour trouver un logement, une université, un hôpital, un hôtel, un commerce et bien même un taxi,ect .   ASA a pour but de rendre La RDC, le Kenya, l’Ouganda, le Burundi et le Rwanda un second chez vous.",
     },
     {
         id: 4,
@@ -246,7 +246,7 @@ export const datapays = [{
                 name: "Autres",
             },
         ],
-        longDesc: "ASA is an association whose mission is to help all those who are new, lost, unmarked in the DRC in the first place and secondly in other cities of the EAC zone.ASA offers visitors and foreigners a chance to feel at home, in their comfort zones through assistance in finding a taxi, accommodation, university, hospital, hotel, business, etc.ASA's vision is to make the DRC, Kenya, Uganda, Burundi and Rwanda your second home.",
+        longDesc: "ASA is an association whose mission is to help all those who are new, lost, unmarked in Ouganda  the first place and secondly in other cities of the EAC zone.ASA offers visitors and foreigners a chance to feel at home, in their comfort zones through assistance in finding a taxi, accommodation, university, hospital, hotel, business, etc.ASA's vision is to make the DRC, Kenya, Uganda, Burundi and Rwanda your second home.",
     },
 
     {
@@ -275,7 +275,7 @@ export const datapays = [{
                 name: "Autres",
             },
         ],
-        longDesc: "ASA is an association whose mission is to help all those who are new, lost, unmarked in the DRC in the first place and secondly in other cities of the EAC zone.ASA offers visitors and foreigners a chance to feel at home, in their comfort zones through assistance in finding a taxi, accommodation, university, hospital, hotel, business, etc.ASA's vision is to make the DRC, Kenya, Uganda, Burundi and Rwanda your second home.",
+        longDesc: "ASA is an association whose mission is to help all those who are new, lost, unmarked in Rwanda the first place and secondly in other cities of the EAC zone.ASA offers visitors and foreigners a chance to feel at home, in their comfort zones through assistance in finding a taxi, accommodation, university, hospital, hotel, business, etc.ASA's vision is to make the DRC, Kenya, Uganda, Burundi and Rwanda your second home.",
     },
     {
         id: 6,
@@ -303,7 +303,7 @@ export const datapays = [{
                 name: "Autres",
             },
         ],
-        longDesc: "ASA is an association whose mission is to help all those who are new, lost, unmarked in the DRC in the first place and secondly in other cities of the EAC zone.ASA offers visitors and foreigners a chance to feel at home, in their comfort zones through assistance in finding a taxi, accommodation, university, hospital, hotel, business, etc.ASA's vision is to make the DRC, Kenya, Uganda, Burundi and Rwanda your second home.",
+        longDesc: "ASA is an association whose mission is to help all those who are new, lost, unmarked in Tanzanie the first place and secondly in other cities of the EAC zone.ASA offers visitors and foreigners a chance to feel at home, in their comfort zones through assistance in finding a taxi, accommodation, university, hospital, hotel, business, etc.ASA's vision is to make the DRC, Kenya, Uganda, Burundi and Rwanda your second home.",
     },
 ];
 

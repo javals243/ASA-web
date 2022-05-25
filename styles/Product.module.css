@@ -7,6 +7,8 @@
     flex: 2;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cardS {
@@ -14,11 +16,19 @@
 }
 
 .imgContainer {
-    width: 30%;
+    width: 320px;
+    height: 320px;
     margin: 5px;
     position: relative;
+    border-radius: 50%;
     cursor: pointer;
     border: 0%;
+    object-fit: cover;
+}
+
+.imgContainer:hover {
+    opacity: 0.7;
+    scale: 0.2;
 }
 
 
@@ -54,6 +64,8 @@
     .imgContainer {
         width: 300px;
         height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
     }
     .cardS {
         display: flex;
@@ -64,12 +76,7 @@
     .button {
         margin: 20px 0px;
     }
-    .imgContainer {
-        border-radius: 50%;
-        overflow: hidden;
-    }
     .cardL::before {
-        content: "Etez-vous ?";
         font-size: 50px;
         width: 100%;
         text-align: center;

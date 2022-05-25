@@ -4,8 +4,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import style from "../styles/Other.module.css"
 
 const Contact = () => {
-  
-   const formId = "CWRbvIso";
   const formSparkUrl = `${process.env.NEXT_PUBLIC_URLl}/api/email`;
   const recaptchaKey = '6LdQdAwgAAAAADYwUNsX1OBKYNT5gjf11IaSbSBu';
   const recaptchaRef = useRef();
@@ -16,7 +14,11 @@ const Contact = () => {
   const initialFormState = {
     email: "",
     name: "",
+    tel:"",
+    services:{},
     message: "",
+    employee:"",
+
   };
 
   const [formState, setFormState] = useState(initialFormState);
@@ -31,7 +33,7 @@ const Contact = () => {
       ...checkedItems,
       [event.target.name]: event.target.checked
     });
-    setFormState(initialFormState.message = checkedItems)
+    setFormState(initialFormState.services= Object.entries(checkedItems).filter(([key, value]) => value))
   
   };
   const veggies = [" Escorte de l’aéroport ou gare au domicile "," Inscription centre d’anglais et universitaire ", "Réservation du domicile ", "Equipement du domicile ","Familiarisation à la ville "];
@@ -93,17 +95,7 @@ const Contact = () => {
           </div>
 
           <div className={style.formGroup}>
-            <label htmlFor="email">Phone number</label>
-            <input
-              onChange={updateFormControl}
-              className={style.input}
-              type="tel"
-              id="tel"
-              value={formState?.email}
-            />
-          </div>
-           <div className={style.formGroup}>
-            <label htmlFor="email">employee</label>
+            <label htmlFor="email">Email</label>
             <input
               onChange={updateFormControl}
               className={style.input}
@@ -112,8 +104,28 @@ const Contact = () => {
               value={formState?.email}
             />
           </div>
+           <div className={style.formGroup}>
+            <label htmlFor="tel">Phone number</label>
+            <input
+              onChange={updateFormControl}
+              className={style.input}
+              type="tel"
+              id="tel"
+              value={formState?.tel}
+            />
+          </div>
+           <div className={style.formGroup}>
+            <label htmlFor="employee">Métier</label>
+            <input
+              onChange={updateFormControl}
+              className={style.input}
+              type="text"
+              id="employee"
+              value={formState?.employee}
+            />
+          </div>
 
-            <h3>Avez vous besoin de quel service ?</h3>
+            <h3>Quel service avez vous besoin de?</h3>
             <div className={style.mainLabel}>
             {veggies.map((item) => (
               <div key={item}>
@@ -141,11 +153,11 @@ const Contact = () => {
               value={formState?.message}
             ></textarea>
           </div>
-           {/* <p>
+           <p id='services' value={formState?.services}>
           Selectionner un services:{" "}
           {Object.entries(checkedItems).filter(([key, value]) => value)}{" "}
         </p>{" "}
-        <br /> */}
+        <br />
 
           <ReCAPTCHA
             ref={recaptchaRef}
