@@ -328,7 +328,7 @@ export const dataTeams = [{
     {
         id: 3,
         name: "Nking bwenge",
-        grade: "PDG ASA <br/> DG au kenya ",
+        grade: "PDG ASA, DG au kenya ",
         photo: "/nking.jpeg",
     },
 ];

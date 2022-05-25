@@ -60,3 +60,9 @@
 .service:hover i {
     color: #fff;
 }
+
+@media only screen and (max-width: 380px) {
+    .container {
+        height: auto;
+    }
+}

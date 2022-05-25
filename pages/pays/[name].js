@@ -14,7 +14,6 @@ const Pays = ({ pays }) => {
           content="Assistance sejour et acceuil"
         />
       </Head>
-       <span>Helllo world</span>
         <div className={style.container}>
       <div className={style.cardL}>
         {pays.sites.map((site) => (

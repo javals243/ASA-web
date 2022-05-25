@@ -15,7 +15,7 @@ function About() {
 
             <div className={style.our_team} key={item.id}>
                         <div className={style.pic}>
-                            <Image className={style.img} src={`${process.env.NEXT_PUBLIC_URLl}/img/teams/${item.photo}`} 
+                            <Image className={style.img} src={`${process.env.NEXT_PUBLIC_URL}/img/teams/${item.photo}`} 
                               width={100}
 
                         height={100} 

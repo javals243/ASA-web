@@ -14,7 +14,7 @@ const Footer = () => {
       <div className={style.left}>
         <div> ASA. </div>{" "}
         <p className={style.desc}>
-          ASA a pour vision de rendre la RDC,le Kenya,l'Ouganda, le,le Burundi
+          ASA a pour vision de rendre la RDC,le Kenya,l'Ouganda, le Burundi
           et le Rwanda votre second chez vous
         </p>{" "}
         <div className={style.socialContainer}>
