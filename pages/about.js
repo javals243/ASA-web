@@ -10,26 +10,26 @@ function About() {
         <div className={style.container}>
             <div className={style.row}>
                 <div className={style.grid}>
-{
-  dataTeams.map((item)=>(
+            {
+            dataTeams.map((item)=>(
 
-            <div className={style.our_team} key={item.id}>
-                        <div className={style.pic}>
-                            <Image className={style.img} src={`${process.env.NEXT_PUBLIC_URL}/img/teams/${item.photo}`} 
-                              width={100}
+                        <div className={style.our_team} key={item.id}>
+                                    <div className={style.pic}>
+                                        <Image className={style.img} src={`${process.env.NEXT_PUBLIC_URL}/img/teams/${item.photo}`} 
+                                        width={2000}
 
-                        height={100} 
-                        alt="image" />
-                        </div>
-                        <div className={style.team_content}>
-                            <h3 className={style.title}>{item.name}</h3>
-                            <span className={style.post}>{item.grade}</span>
-                        </div>
-                        
-      </div>
-  ))
-}
-                
+                                    height={2000} 
+                                    alt="image" />
+                                    </div>
+                                    <div className={style.team_content}>
+                                        <h3 className={style.title}>{item.name}</h3>
+                                        <span className={style.post}>{item.grade}</span>
+                                    </div>
+                                    
+                </div>
+            ))
+            }
+                            
                   
             </div>
         </div>

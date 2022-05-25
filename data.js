@@ -316,20 +316,32 @@ export const dataTeams = [{
     {
         id: 2,
         name: "Will MATA",
-        grade: "ASA’s DG in Democratic Republic of Congo,",
+        grade: "ASA’s DG in Democratic Republic of Congo",
         photo: "/will.jpeg",
     },
     {
         id: 3,
         name: "Sam MANIRAKIZA",
-        grade: "Live in Kigali-Rwanda Expert in ICT & Graphic Design",
+        grade: "ASA's DG in Rwanda",
         photo: "/sam.jpeg",
     },
     {
-        id: 3,
+        id: 4,
         name: "Nking bwenge",
-        grade: "PDG ASA, DG au kenya ",
+        grade: "PDG ASA and ASA's DG in kenya ",
         photo: "/nking.jpeg",
+    },
+    {
+        id: 5,
+        name: "Bahati Bidugu Gloire",
+        grade: "DG de l'ASA en République du Burundi",
+        photo: "/bahati.jpeg",
+    },
+    {
+        id: 6,
+        name: "Soon",
+        grade: "Soon DG Tanzania",
+        photo: "/bahati.jpeg",
     },
 ];
 export const users = [{
