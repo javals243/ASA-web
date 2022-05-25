@@ -132,7 +132,7 @@ const Contact = () => {
             ))}
           </div>
           <div className={style.formGroup}>
-            <label htmlFor="message">Description</label>
+            <label htmlFor="message">Demandes spéciales</label>
             <textarea
               onChange={updateFormControl}
               className={style.input}
