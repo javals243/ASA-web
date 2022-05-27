@@ -1,73 +1,97 @@
-import  React, {useRef,useState,useEffect} from 'react'
-import axios from 'axios'
+import React, { useRef, useState, useEffect } from "react";
+import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
-import style from "../styles/Other.module.css"
+import style from "../styles/Other.module.css";
+import Select from "react-select";
 
 const Contact = () => {
-  const formSparkUrl = `${process.env.NEXT_PUBLIC_URLl}/api/email`;
-  const recaptchaKey = '6LdQdAwgAAAAADYwUNsX1OBKYNT5gjf11IaSbSBu';
+  const formSparkUrl = `${process.env.NEXT_PUBLIC_URLl}/api/contact`;
+  const recaptchaKey = "6LdQdAwgAAAAADYwUNsX1OBKYNT5gjf11IaSbSBu";
   const recaptchaRef = useRef();
 
-const initialFormState={
-  name:'',
-  email:'',
-  tel:'',
-  services:{},
-  message:''
-}
+  const initialFormState = {
+    name: "",
+    email: "",
+    tel: "",
+    services: [],
+    message: "",
+  };
+
   // const [formState, setFormState] = useState(initialFormState);
-   const [name, setName] = useState(initialFormState.name);
-    const [services, setServices] = useState(initialFormState.services);
-    const [email, setEmail] = useState(initialFormState.email);
-     const [tel, setTel] = useState(initialFormState.tel);
+  const [name, setName] = useState(initialFormState.name);
+  const [services, setServices] = useState([]);
+  const [email, setEmail] = useState(initialFormState.email);
+  const [tel, setTel] = useState(initialFormState.tel);
   const [parag, setParag] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [recaptchaToken, setReCaptchaToken] = useState();
-   const [checkedItems, setCheckedItems] = useState({});
+  const [checkedItems, setCheckedItems] = useState({});
 
   const handleChange = (event) => {
-  
     setCheckedItems({
       ...checkedItems,
-      [event.target.name]: event.target.checked
+      [event.target.name]: event.target.checked,
     });
-      setServices(checkedItems)
+    setServices(checkedItems);
   };
-  const veggies = [" Escorte de l’aéroport ou gare au domicile "," Inscription centre d’anglais et universitaire ", "Réservation du domicile ", "Equipement du domicile ","Familiarisation à la ville "];
 
-  const submitForm = async (event) => {
-    event.preventDefault();
+  const serviceTexts = [
+    {
+      value: "Escorte de l’aéroport ou gare au domicile",
+      label: "Escorte de l’aéroport ou gare au domicile",
+    },
+    {
+      value: "Inscription centre d’anglais et universitaire",
+      label: "Inscription centre d’anglais et universitaire",
+    },
+    {
+      value: "Réservation du domicile",
+      label: "Réservation du domicile",
+    },
+    {
+      value: "Equipement du domicile",
+      label: "Equipement du domicile",
+    },
+    {
+      value: "Familiarisation à la ville",
+      label: "Familiarisation à la ville",
+    },
+  ];
+
+  const submitForm = async (e) => {
+    e.preventDefault();
     setSubmitting(true);
-    await postSubmission();
+    await contactSubmitHandler();
     setSubmitting(false);
   };
   //  "g-recaptcha-response": recaptchaToken,
 
-  const postSubmission = async () => {
-    const payload = {name,email,tel,message,services
+  const contactSubmitHandler = async () => {
+    const bodyObj = {
+      name,
+      email,
+      phone: tel,
+      services,
+      specialDemands: message,
     };
-    console.log("yours payload are ",payload)
 
-    // try {
-    //   const result = await axios.post(formSparkUrl, payload);
-    //   console.log(result);
-    //   setMessage({
-    //     class: "bg-green-500",
-    //     text: "Thanks, someone will be in touch shortly.",
-    //   });
-    //   setFormState(initialFormState);
-    //   recaptchaRef.current.reset();
-    // } catch (error) {
-    //   console.log(error);
-     
-    // }
+    try {
+      const { data: response } = await axios.post(formSparkUrl, bodyObj);
+
+      console.log("@@@@ ===> AXIOS RESULTS", response.data);
+
+      setFormState(initialFormState);
+      recaptchaRef.current.reset();
+    } catch (err) {
+      console.log(`Axios Error ${err.message}`);
+    }
   };
 
-  const updateFormControl = ( e) => {
+  const updateFormControl = (e) => {
     const { id, value } = e.target;
-    const key = id 
-    
+    const key = id;
+
     const updatedFormState = { ...formState };
     updatedFormState[key] = value;
     setFormState(updatedFormState);
@@ -77,6 +101,12 @@ const initialFormState={
     setReCaptchaToken(token);
   };
 
+  const servicesHandler = (serviceArr) => {
+    setServices(serviceArr);
+  };
+
+  // console.log("@@@@@ ===>", services);
+
   return (
     <div className={style.container}>
       <div>
@@ -85,13 +115,10 @@ const initialFormState={
           <div className={style.formGroup}>
             <label htmlFor="name">Nom</label>
             <input
-              // onChange={updateFormControl}
               className={style.input}
               type="text"
-              // id="name"
-              // value={formState?.name}
               value={name}
-              onChange={(e)=>setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
 
@@ -104,10 +131,10 @@ const initialFormState={
               // id="email"
               // value={formState?.email}
               value={email}
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-           <div className={style.formGroup}>
+          <div className={style.formGroup}>
             <label htmlFor="tel">Phone number</label>
             <input
               // onChange={updateFormControl}
@@ -116,12 +143,12 @@ const initialFormState={
               // id="tel"
               // value={formState?.tel}
               value={tel}
-              onChange={(e)=>setTel(e.target.value)}
+              onChange={(e) => setTel(e.target.value)}
             />
           </div>
 
-            <h3>Quel service avez vous besoin de?</h3>
-            <div className={style.mainLabel}>
+          <h3>Quel service avez vous besoin de?</h3>
+          {/* <div className={style.mainLabel}>
             {veggies.map((item) => (
               <div key={item}>
               <input
@@ -136,7 +163,12 @@ const initialFormState={
               </div>
             
             ))}
-          </div>
+          </div> */}
+          <Select
+            options={serviceTexts}
+            isMulti={true}
+            onChange={servicesHandler}
+          />
           <div className={style.formGroup}>
             <label htmlFor="message">Demandes spéciales</label>
             <textarea
@@ -146,12 +178,13 @@ const initialFormState={
               rows={6}
               // value={formState?.message}
               value={message}
-              onChange={(e)=>setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
-           {/* <input  onChange={(e)=>setParag(e.target.value)} value={parag}>
-          Selectionner un services:
-          {Object.entries(checkedItems).filter(([key, value]) => value)}</input> */}
+          <p onChange={(e) => setParag(e.target.value)} value={parag}>
+            Selectionner un services:
+            {Object.entries(checkedItems).filter(([key, value]) => value)}
+          </p>
 
           <ReCAPTCHA
             ref={recaptchaRef}
@@ -160,7 +193,7 @@ const initialFormState={
             onChange={updateRecaptchaToken}
           />
 
-          <button disabled={submitting} className={style.button1}>
+          <button type="submit" disabled={submitting} className={style.button1}>
             {submitting ? "Envoyer..." : "Envoyer le message"}
           </button>
         </form>
