@@ -140,23 +140,27 @@ export const datapays = [{
                 id: 1,
                 image: "/etudiant.jpg",
                 name: "Etudiant",
+                link: "/student",
             },
             {
                 id: 2,
                 image: "/commercant.jpg",
                 name: "Commercant",
+                link: "/treader",
             },
 
             {
                 id: 3,
                 image: "/vacance.jpg",
                 name: "Vancances",
+                link: "/holiday",
             },
 
             {
                 id: 5,
                 image: "autres.jpg",
                 name: "Autres",
+                link: "/",
             },
         ],
 
