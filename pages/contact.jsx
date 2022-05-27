@@ -8,22 +8,21 @@ const Contact = () => {
   const recaptchaKey = '6LdQdAwgAAAAADYwUNsX1OBKYNT5gjf11IaSbSBu';
   const recaptchaRef = useRef();
 
-
-   
- 
-  const initialFormState = {
-    email: "",
-    name: "",
-    tel:"",
-    services:{},
-    message: "",
-    employee:"",
-
-  };
-
-  const [formState, setFormState] = useState(initialFormState);
+const initialFormState={
+  name:'',
+  email:'',
+  tel:'',
+  services:{},
+  message:''
+}
+  // const [formState, setFormState] = useState(initialFormState);
+   const [name, setName] = useState(initialFormState.name);
+    const [services, setServices] = useState(initialFormState.services);
+    const [email, setEmail] = useState(initialFormState.email);
+     const [tel, setTel] = useState(initialFormState.tel);
+  const [parag, setParag] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [message, setMessage] = useState();
+  const [message, setMessage] = useState('');
   const [recaptchaToken, setReCaptchaToken] = useState();
    const [checkedItems, setCheckedItems] = useState({});
 
@@ -33,8 +32,7 @@ const Contact = () => {
       ...checkedItems,
       [event.target.name]: event.target.checked
     });
-    setFormState(initialFormState.services= Object.entries(checkedItems).filter(([key, value]) => value))
-  
+      setServices(checkedItems)
   };
   const veggies = [" Escorte de l’aéroport ou gare au domicile "," Inscription centre d’anglais et universitaire ", "Réservation du domicile ", "Equipement du domicile ","Familiarisation à la ville "];
 
@@ -47,28 +45,29 @@ const Contact = () => {
   //  "g-recaptcha-response": recaptchaToken,
 
   const postSubmission = async () => {
-    const payload = {
-      ...formState,
+    const payload = {name,email,tel,message,services
     };
+    console.log("yours payload are ",payload)
 
-    try {
-      const result = await axios.post(formSparkUrl, payload);
-      console.log(result);
-      setMessage({
-        class: "bg-green-500",
-        text: "Thanks, someone will be in touch shortly.",
-      });
-      setFormState(initialFormState);
-      recaptchaRef.current.reset();
-    } catch (error) {
-      console.log(error);
+    // try {
+    //   const result = await axios.post(formSparkUrl, payload);
+    //   console.log(result);
+    //   setMessage({
+    //     class: "bg-green-500",
+    //     text: "Thanks, someone will be in touch shortly.",
+    //   });
+    //   setFormState(initialFormState);
+    //   recaptchaRef.current.reset();
+    // } catch (error) {
+    //   console.log(error);
      
-    }
+    // }
   };
 
   const updateFormControl = ( e) => {
     const { id, value } = e.target;
     const key = id 
+    
     const updatedFormState = { ...formState };
     updatedFormState[key] = value;
     setFormState(updatedFormState);
@@ -86,42 +85,38 @@ const Contact = () => {
           <div className={style.formGroup}>
             <label htmlFor="name">Nom</label>
             <input
-              onChange={updateFormControl}
+              // onChange={updateFormControl}
               className={style.input}
               type="text"
-              id="name"
-              value={formState?.name}
+              // id="name"
+              // value={formState?.name}
+              value={name}
+              onChange={(e)=>setName(e.target.value)}
             />
           </div>
 
           <div className={style.formGroup}>
             <label htmlFor="email">Email</label>
             <input
-              onChange={updateFormControl}
+              // onChange={updateFormControl}
               className={style.input}
               type="email"
-              id="email"
-              value={formState?.email}
+              // id="email"
+              // value={formState?.email}
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
             />
           </div>
            <div className={style.formGroup}>
             <label htmlFor="tel">Phone number</label>
             <input
-              onChange={updateFormControl}
+              // onChange={updateFormControl}
               className={style.input}
               type="tel"
-              id="tel"
-              value={formState?.tel}
-            />
-          </div>
-           <div className={style.formGroup}>
-            <label htmlFor="employee">Métier</label>
-            <input
-              onChange={updateFormControl}
-              className={style.input}
-              type="text"
-              id="employee"
-              value={formState?.employee}
+              // id="tel"
+              // value={formState?.tel}
+              value={tel}
+              onChange={(e)=>setTel(e.target.value)}
             />
           </div>
 
@@ -134,7 +129,6 @@ const Contact = () => {
                   className={style.inputD}
                   name={item}
                   checked={checkedItems[item]}
-                  onChange={handleChange}
                 />
                    <label  className={style.label}>
                 {item}
@@ -146,18 +140,18 @@ const Contact = () => {
           <div className={style.formGroup}>
             <label htmlFor="message">Demandes spéciales</label>
             <textarea
-              onChange={updateFormControl}
+              // onChange={updateFormControl}
               className={style.input}
-              id="message"
+              // id="message"
               rows={6}
-              value={formState?.message}
+              // value={formState?.message}
+              value={message}
+              onChange={(e)=>setMessage(e.target.value)}
             ></textarea>
           </div>
-           <p id='services' value={formState?.services}>
-          Selectionner un services:{" "}
-          {Object.entries(checkedItems).filter(([key, value]) => value)}{" "}
-        </p>{" "}
-        <br />
+           {/* <input  onChange={(e)=>setParag(e.target.value)} value={parag}>
+          Selectionner un services:
+          {Object.entries(checkedItems).filter(([key, value]) => value)}</input> */}
 
           <ReCAPTCHA
             ref={recaptchaRef}

@@ -309,8 +309,14 @@ export const datapays = [{
 
 export const dataTeams = [{
         id: 1,
+        name: "Nking bwenge",
+        grade: "PDG ASA and ASA's DG in kenya ",
+        photo: "/nking.jpeg",
+    },
+    {
+        id: 4,
         name: "Mugisho safari Roland ",
-        grade: "Ongeza ASA’s DG in Ouganda",
+        grade: "ASA’s DG in Ouganda",
         photo: "/mugisho.jpeg",
     },
     {
@@ -325,12 +331,7 @@ export const dataTeams = [{
         grade: "ASA's DG in Rwanda",
         photo: "/sam.jpeg",
     },
-    {
-        id: 4,
-        name: "Nking bwenge",
-        grade: "PDG ASA and ASA's DG in kenya ",
-        photo: "/nking.jpeg",
-    },
+
     {
         id: 5,
         name: "Bahati Bidugu Gloire",

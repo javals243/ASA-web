@@ -44,6 +44,14 @@
     width: 25px;
     height: 20px;
     cursor: pointer;
+    overflow: hidden;
+}
+
+.hamburger {
+    display: none;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
 }
 
 .line {
@@ -55,11 +63,12 @@
 .menu {
     display: none;
     position: fixed;
-    width: 50vw;
+    width: 100vw;
     height: calc(100vh - 100px);
     background-color: #151515;
-    top: 50px;
+    top: 100px;
     /* right: 0px; */
+    opacity: 0.95;
     z-index: 9999;
     margin: 0;
     padding: 0;
