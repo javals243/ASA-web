@@ -2,11 +2,12 @@ import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import style from "../../styles/Other.module.css";
+import { datapays } from "../../data";
 import Select from "react-select";
 import { toast } from "react-toastify";
 
 const Student = () => {
-  const formSparkUrl = `${process.env.NEXT_PUBLIC_URLl}/api/student`;
+  const formSparkUrl = `${process.env.NEXT_PUBLIC_URL}/api/student`;
   const recaptchaKey = "6LdQdAwgAAAAADYwUNsX1OBKYNT5gjf11IaSbSBu";
   const recaptchaRef = useRef();
 
@@ -97,15 +98,6 @@ const initialFormState =()=> {
     } catch (err) {
      toast.error(`${err.message}`);
     }
-  };
-
-  const updateFormControl = (e) => {
-    const { id, value } = e.target;
-    const key = id;
-
-    const updatedFormState = { ...formState };
-    updatedFormState[key] = value;
-    setFormState(updatedFormState);
   };
 
   const updateRecaptchaToken = (token) => {
@@ -213,5 +205,26 @@ const initialFormState =()=> {
     </div>
   );
 };
+// export const getStaticPaths = async () => {
+//   const pays = datapays;
+//   const paths = pays.map((item) => {
+//     return {
+//       params: { name: item.name },
+//     };
+//   });
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+
+// export const getStaticProps = async (ctx) => {
+//   const name = ctx.params.name;
+//   const pays = datapays.filter((item) => item.name === name)[0];
+//   return {
+//     props: { pays },
+//   };
+// };
+
 
 export default Student;

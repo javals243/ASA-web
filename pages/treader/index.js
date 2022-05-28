@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+import { datapays } from "../../data";
 import style from "../../styles/Other.module.css";
 import Select from "react-select";
 import { toast } from "react-toastify";
@@ -48,7 +49,7 @@ const Treader = () => {
       label: "Escorte de l’aéroport ou gare au domicile",
     },
   ];
-  const initialFormStateS = () => {
+  const initialFormStateS = ({pays}) => {
     setIdentite("");
     setEmail(""),
       setTel(""),
@@ -203,5 +204,26 @@ const Treader = () => {
     </div>
   );
 };
+
+// export const getStaticPaths = async () => {
+//   const pays = datapays;
+//   const paths = pays.map((item) => {
+//     return {
+//       params: { name: item.name },
+//     };
+//   });
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+
+// export const getStaticProps = async (ctx) => {
+//   const name = ctx.params.name;
+//   const pays = datapays.filter((item) => item.name === name)[0];
+//   return {
+//     props: { pays },
+//   };
+// };
 
 export default Treader;

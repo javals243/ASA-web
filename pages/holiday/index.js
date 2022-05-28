@@ -3,7 +3,7 @@ import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import style from "../../styles/Other.module.css";
 import Select from "react-select";
-
+import { datapays } from "../../data";
 const Holiday = () => {
   const formSparkUrl = `${process.env.NEXT_PUBLIC_URL}/api/holiday`;
   const recaptchaKey = "6LdQdAwgAAAAADYwUNsX1OBKYNT5gjf11IaSbSBu";
@@ -42,8 +42,8 @@ const Holiday = () => {
       label: "Appartement ou hôtel",
     },
     {
-      value: "Passer qu’à Nairobi ou ailleurs aussi",
-      label: "Passer qu’à Nairobi ou ailleurs aussi",
+      value: `Passer vacancer ailleurs aussi (a specifier dans le champ Demandes spéciales)`,
+      label: `Passer vacancer ailleurs aussi (a specifier dans le champ Demandes spéciales)`,
     },
     {
       value: "Escorte de l’aéroport ou gare au domicile",
@@ -213,5 +213,25 @@ const Holiday = () => {
     </div>
   );
 };
+// export const getStaticPaths = async () => {
+//   const pays = datapays;
+//   const paths = pays.map((item) => {
+//     return {
+//       params: { name: item.name },
+//     };
+//   });
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+
+// export const getStaticProps = async (ctx) => {
+//   const name = ctx.params.name;
+//   const pays = datapays.filter((item) => item.name === name)[0];
+//   return {
+//     props: { pays },
+//   };
+// };
 
 export default Holiday;

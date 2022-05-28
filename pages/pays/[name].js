@@ -19,13 +19,13 @@ const Pays = ({ pays }) => {
         {pays.sites.map((site) => (
         <Link key={pays.id} href={`${site.link}`} passHref>
           <div key={site.id} className={style.imgContainer}>
-            <Image src={`${process.env.NEXT_PUBLIC_URL}/img/${site.image}`} layout="fill" objectFit="cover" alt="vonjour les zizi" />
+            <Image src={`${process.env.NEXT_PUBLIC_URL}/img/${site.image}`} layout="fill" objectFit="cover" alt={`${site.name}`} />
           </div>
           </Link>
         ))}
       </div>
       <div className={style.cardS}>
-        <h1 className={style.title}>ASA - {pays.name}</h1>
+        <h1 className={style.title}>ASA-{pays.name}</h1>
         <p className={style.desc}>{pays.longDesc}</p>
         
       </div>

@@ -47,19 +47,6 @@ export default async function handler(req, res) {
             <p style="text-align:center;">ASA &copy; Tous droits réservés </p>
         `;
 
-    // return res.json({
-    //   data: {
-    //     name,
-    //     email,
-    //     phone,
-    //     services: customServices,
-    //     specialDemands,
-    //     personNumber,
-    //     coordonner,
-    //     university,
-    //   },
-    // });
-
     async function main() {
       let testAccount = await nodemailer.createTestAccount();
 
@@ -95,6 +82,19 @@ export default async function handler(req, res) {
     }
 
     main().catch(console.error);
+    return res.json({
+      data: {
+        name,
+        email,
+        phone,
+        services: customServices,
+        specialDemands,
+        personNumber,
+        coordonner,
+        university,
+      },
+    });
+
   } else {
     return res.status(500).json({ message: "Only POST requests are allowed" });
   }
